@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_template/core/constants/enums/app_theme_enum.dart';
-import 'package:flutter_template/core/init/notifier/theme_notifier.dart';
+import '../../../../core/constants/enums/app_theme_enum.dart';
+import '../../../../core/init/notifier/theme_notifier.dart';
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
 part 'test_view_model.g.dart';

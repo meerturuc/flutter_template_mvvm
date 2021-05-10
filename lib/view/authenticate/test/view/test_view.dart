@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_template/core/extension/string_entension.dart';
-import 'package:flutter_template/core/init/lang/lang_manager.dart';
-import 'package:flutter_template/core/init/lang/locale_keys.g.dart';
-import 'package:flutter_template/view/authenticate/test/viewmodel/test_view_model.dart';
+
 import '../../../../core/base/state/base_state.dart';
 import '../../../../core/base/view/base_widget.dart';
+import '../../../../core/extension/string_entension.dart';
+import '../../../../core/init/lang/lang_manager.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../viewmodel/test_view_model.dart';
 
 class TestsView extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _TestsViewState extends BaseState<TestsView> {
       onModelReady: (model) {
         viewModel = model;
       },
-      onPageBuilder: (context, value) => Text("data"),
+      onPageBuilder: (context, value) => Text('data'),
     );
   }
 
