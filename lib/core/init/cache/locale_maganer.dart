@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class LocaleManager {
   static final LocaleManager _instance = LocaleManager._init();
 
-  SharedPreferences _preferences;
+  SharedPreferences? _preferences;
   static LocaleManager get instance => _instance;
 
   LocaleManager._init() {
@@ -19,9 +19,9 @@ class LocaleManager {
   }
 
   Future<void> setStringValue(PreferencesKeys key, String value) async {
-    await _preferences.setString(key.toString(), value);
+    await _preferences!.setString(key.toString(), value);
   }
 
-  String getStringvalue(PreferencesKeys key) =>
-      _preferences.getString(key.toString());
+  String getStringValue(PreferencesKeys key) =>
+      _preferences!.getString(key.toString()) ?? '';
 }

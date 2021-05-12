@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class LanguageManager {
-  static LanguageManager _instance;
-  static LanguageManager get instance {
-    //if (_instance == null) _instance = LanguageManager._init();
-    _instance ??= LanguageManager._init();
-    return _instance;
-  }
+  static LanguageManager? _instance;
+  static LanguageManager get instance => _instance ??= LanguageManager._init();
 
   LanguageManager._init();
 
