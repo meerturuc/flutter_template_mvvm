@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_template/core/init/network/network_manager.dart';
+import 'package:flutter_template/view/authenticate/test/model/test_model.dart';
 import '../../../../core/constants/enums/app_theme_enum.dart';
 import '../../../../core/init/notifier/theme_notifier.dart';
 import 'package:mobx/mobx.dart';
@@ -14,6 +16,8 @@ abstract class _TestViewModelBase with Store {
     this.context = context;
   }
 
+  @observable
+  bool isLoading = false;
   @observable // Sabit bir değer ise observable
   int number = 0;
 
@@ -28,5 +32,15 @@ abstract class _TestViewModelBase with Store {
   void changeTheme() {
     Provider.of<ThemeNotifier>(context, listen: false)
         .changeValue(AppThemes.DARK);
+  }
+
+  @action
+  Future<void> getSampleReguest() async {
+    isLoading = true;
+    final list = await NetworkManager.instance.dioGet('x', TestModel());
+    if (list is List) {
+      //print true
+    }
+    isLoading = false;
   }
 }
